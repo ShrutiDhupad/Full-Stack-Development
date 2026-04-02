@@ -1,0 +1,250 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#142e4f;
+color:#e8e5df;
+}
+
+/* Container */
+
+.container{
+padding:60px 10%;
+}
+
+/* Navigation */
+
+nav{
+display:flex;
+justify-content:space-evenly;
+align-items:center;
+}
+
+.logo{
+width:300px;
+margin-top:90px;
+border-radius: 50%;
+border: 2px solid #97ad96;
+}
+
+nav ul li{
+display:inline-block;
+margin:10px 20px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#e8e5df;
+font-weight:500;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#97ad96;
+}
+
+/* Header */
+
+#header{
+height:70vh;
+}
+
+.header-text{
+margin-top:150px;
+}
+.line{
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+}
+.header-text p{
+font-size:20px;
+color:#8fa6be;
+}
+
+.header-text h1{
+font-size:60px;
+margin-top:10px;
+}
+
+.header-text span{
+color:#97ad96;
+}
+
+/* Section Titles */
+
+h1{
+font-size:36px;
+margin-bottom:30px;
+color:#8fa6be;
+}
+
+/* Education */
+
+.edu-item{
+background:#3f5642;
+padding:20px;
+border-radius:10px;
+}
+
+/* Skills */
+
+#skills ul{
+line-height:2;
+font-size:18px;
+}
+
+/* Projects */
+
+.project{
+background:#3f5642;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.project:hover{
+transform:translateY(-8px);
+background:#97ad96;
+color:#142e4f;
+}
+
+/* Experience */
+
+#experience{
+line-height:1.7;
+}
+
+/* Contact */
+
+#contact p{
+margin:10px 0;
+font-size:18px;
+}
+
+/* Buttons */
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#8fa6be;
+color:#142e4f;
+border-radius:6px;
+text-decoration:none;
+transition:0.3s;
+font-weight:600;
+}
+
+.btn:hover{
+background:#97ad96;
+}
+
+/* Section spacing */
+
+section{
+margin-top:80px;
+}
+#achievements ul{
+line-height:2;
+margin-bottom:25px;
+}
+
+.achievement-item{
+background:#3f5642;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.achievement-item:hover{
+transform:translateY(-6px);
+background:#97ad96;
+color:#142e4f;
+}
+
+#achievements h2{
+margin-top:20px;
+margin-bottom:10px;
+color:#8fa6be;
+}
+/* CONTACT SECTION */
+
+#contact{
+    padding:80px 0;
+    background:#142e4f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.contact-container{
+    width:450px;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.contact-container h2{
+    color:#142e4f;
+    margin-bottom:25px;
+    font-size:28px;
+}
+
+/* INPUT FIELDS */
+
+#contactForm input,
+#contactForm textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:6px;
+    border:1px solid #97ad96;
+    font-size:15px;
+    outline:none;
+    transition:0.3s;
+}
+
+#contactForm textarea{
+    height:120px;
+    resize:none;
+}
+
+/* INPUT HOVER */
+
+#contactForm input:focus,
+#contactForm textarea:focus{
+    border-color:#3f5642;
+    box-shadow:0 0 5px rgba(63,86,66,0.3);
+}
+
+/* BUTTON */
+
+#contactForm button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#142e4f;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* BUTTON HOVER */
+
+#contactForm button:hover{
+    background:#3f5642;
+    transform:scale(1.03);
+}
