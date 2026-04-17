@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Your Cart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+ <header>
+    <div class="navbar">
+        <div class="navlogo border">
+            <div class="logo">
+                
+            </div>
+        </div>
+        <div class="navaddress">
+            <p class="add1">Deliver to</p>
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <P class="add2">India</P>
+            </div>
+        </div>
+        <div class="navsearch">
+            <select class="searchselect">
+                 <option>All</option>
+            </select>
+          
+            <input placeholder="Search Amazon" class="searchinput">
+            <div class="searchicon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="signin" onclick="window.location.href='signin.html'">
+    <p class="p1"> Hello, SignIn</p>
+    <p class="p2"> Accounts & Lists</p>
+</div>
+        <div class="signin">
+            <p class="p1"> Returns</p>
+            <p class="p2"> & Orders</p>
+        </div>
+        <div class="navcart" onclick="window.location.href='cart.html'">
+            <div class="carticon">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+            </div>
+            <p> Cart</p>
+
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panelall">
+            <div class="menuicon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <p class="menuall">All</p>
+        </div>
+        <div class="mainpanel">
+            <p class="panelp">Today's Deals</p>
+            <p class="panelp">Customer service</p>
+            <p class="panelp">Registry</p>
+            <p class="panelp">Gift Cards</p>
+            <p class="panelp">Sell</p>
+        </div>
+        <div class="deals">
+            <p> Shop deals in Electronics</p>
+        </div>
+    </div>
+    </header>
+<body>
+
+<h1>Your Cart</h1>
+
+<div id="cartItems"></div>
+
+<h2 id="total"></h2>
+<script>
+
+let rawCart = JSON.parse(localStorage.getItem("cart")) || []
+
+// Merge duplicate products
+let cartMap = {}
+
+rawCart.forEach(item => {
+
+if(cartMap[item.name]){
+cartMap[item.name].quantity += item.quantity || 1
+}
+else{
+cartMap[item.name] = {
+name: item.name,
+price: item.price,
+quantity: item.quantity || 1
+}
+}
+
+})
+
+let cart = Object.values(cartMap)
+
+let container = document.getElementById("cartItems")
+
+function renderCart(){
+
+container.innerHTML = ""
+
+let total = 0
+
+cart.forEach((item,index)=>{
+
+container.innerHTML += `
+<div class="cart-item">
+
+<h3>${item.name} (x${item.quantity})</h3>
+
+<p>₹${item.price * item.quantity}</p>
+
+<button onclick="removeItem(${index})">Remove</button>
+
+</div>
+`
+
+total += item.price * item.quantity
+
+})
+
+document.getElementById("total").innerText = "Total: ₹" + total
+
+localStorage.setItem("cart", JSON.stringify(cart))
+
+}
+
+function removeItem(index){
+
+cart.splice(index,1)
+
+localStorage.setItem("cart", JSON.stringify(cart))
+
+renderCart()
+
+}
+
+renderCart()
+
+</script>
+
+</body>
+</html>
