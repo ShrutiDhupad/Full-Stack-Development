@@ -1,0 +1,10 @@
+{
+  "name": "student-feedback-system",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client"
+  }
+}
